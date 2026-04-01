@@ -36,7 +36,7 @@ const Payment = () => {
             setCountdown(prev => {
                 if (prev <= 1) {
                     clearInterval(timerRef.current)
-                    navigate("/admin")
+                    navigate("/Dashboard")
                     return 0
                 }
                 return prev - 1
@@ -76,7 +76,7 @@ const Payment = () => {
     const handleGoToDashboard = () => {
         clearInterval(timerRef.current)
         setShowModal(false)
-        navigate("/admin")
+        navigate("/Dashboard")
     }
 
     const css = `
