@@ -1,0 +1,371 @@
+ @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+ .crm-root {
+     min-height: 100vh;
+     background: radial-gradient(ellipse at 30% 20%, #0d1b3e 0%, #050a1a 55%, #0a0614 100%);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     font-family: 'DM Sans', sans-serif;
+     padding: 40px 16px;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .crm-root::before {
+     content: '';
+     position: absolute;
+     inset: 0;
+     background-image:
+         radial-gradient(1px 1px at 12% 8%, rgba(255, 255, 255, .55) 0%, transparent 100%),
+         radial-gradient(1px 1px at 78% 14%, rgba(255, 255, 255, .4) 0%, transparent 100%),
+         radial-gradient(1px 1px at 45% 5%, rgba(255, 255, 255, .6) 0%, transparent 100%),
+         radial-gradient(1px 1px at 91% 37%, rgba(255, 255, 255, .35) 0%, transparent 100%),
+         radial-gradient(1px 1px at 5% 62%, rgba(255, 255, 255, .5) 0%, transparent 100%),
+         radial-gradient(1px 1px at 64% 78%, rgba(255, 255, 255, .3) 0%, transparent 100%),
+         radial-gradient(1px 1px at 33% 90%, rgba(255, 255, 255, .45) 0%, transparent 100%),
+         radial-gradient(1px 1px at 88% 92%, rgba(255, 255, 255, .4) 0%, transparent 100%),
+         radial-gradient(1px 1px at 22% 44%, rgba(255, 255, 255, .3) 0%, transparent 100%),
+         radial-gradient(1px 1px at 56% 55%, rgba(255, 255, 255, .25) 0%, transparent 100%),
+         radial-gradient(1px 1px at 3% 25%, rgba(255, 255, 255, .3) 0%, transparent 100%),
+         radial-gradient(1px 1px at 70% 50%, rgba(255, 255, 255, .2) 0%, transparent 100%),
+         radial-gradient(1px 1px at 50% 70%, rgba(255, 255, 255, .35) 0%, transparent 100%),
+         radial-gradient(1px 1px at 95% 10%, rgba(255, 255, 255, .4) 0%, transparent 100%);
+     pointer-events: none;
+     z-index: 0;
+ }
+
+ .crm-root::after {
+     content: '';
+     position: absolute;
+     width: 350px;
+     height: 700px;
+     background: radial-gradient(ellipse, rgba(110, 50, 255, .2) 0%, transparent 70%);
+     top: 5%;
+     left: 50%;
+     transform: translateX(-50%);
+     pointer-events: none;
+     z-index: 0;
+ }
+
+ /* ── Toggle pill ── */
+ .crm-toggle {
+     position: relative !important;
+     width: 224px !important;
+     height: 42px !important;
+     border-radius: 999px !important;
+     background: rgba(255, 255, 255, .07) !important;
+     border: 1px solid rgba(255, 255, 255, .18) !important;
+     padding: 0 !important;
+     overflow: hidden;
+     display: flex !important;
+     align-items: center;
+     cursor: pointer;
+     margin: 0 auto 28px;
+     box-shadow: none !important;
+     z-index: 10;
+     flex-shrink: 0;
+ }
+
+ .crm-toggle:focus,
+ .crm-toggle:focus-visible {
+     box-shadow: 0 0 0 3px rgba(124, 58, 237, .45) !important;
+     outline: none;
+ }
+
+ .crm-toggle:hover {
+     background: rgba(255, 255, 255, .1) !important;
+ }
+
+ .crm-toggle-thumb {
+     position: absolute;
+     left: 4px;
+     width: 108px;
+     height: 34px;
+     border-radius: 999px;
+     background: linear-gradient(135deg, #4f46e5, #7c3aed);
+     box-shadow: 0 0 20px rgba(124, 58, 237, .65);
+     transition: transform .38s cubic-bezier(.34, 1.56, .64, 1);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: #fff;
+     font-weight: 700;
+     font-size: 13px;
+     letter-spacing: .3px;
+     z-index: 2;
+     pointer-events: none;
+ }
+
+ .crm-toggle-thumb.to-login {
+     transform: translateX(112px);
+ }
+
+ .crm-toggle-lbl {
+     position: absolute;
+     color: rgba(255, 255, 255, .85);
+     font-size: 13px;
+     font-weight: 600;
+     user-select: none;
+     z-index: 1;
+     transition: opacity .25s;
+     pointer-events: none;
+ }
+
+ .crm-toggle-lbl.left {
+     left: 16px;
+ }
+
+ .crm-toggle-lbl.right {
+     right: 16px;
+ }
+
+ /* ── Card ── */
+ .crm-card {
+     background: rgba(255, 255, 255, .04) !important;
+     border: 1px solid rgba(255, 255, 255, .1) !important;
+     border-radius: 20px !important;
+     backdrop-filter: blur(16px);
+     -webkit-backdrop-filter: blur(16px);
+     color: #fff;
+     width: 100%;
+     max-width: 480px;
+     transition: opacity .28s ease;
+     z-index: 10;
+ }
+
+ .crm-card.fading {
+     opacity: 0;
+ }
+
+ .crm-card .card-header {
+     background: transparent !important;
+     border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
+     border-radius: 20px 20px 0 0 !important;
+     padding: 26px 30px 20px;
+ }
+
+ .crm-card .card-body {
+     padding: 26px 30px 30px;
+ }
+
+ .crm-brand {
+     font-family: 'Syne', sans-serif;
+     font-size: 26px;
+     font-weight: 800;
+     margin: 0 0 5px;
+     color: #fff;
+     letter-spacing: -.4px;
+ }
+
+ .crm-brand-sub {
+     color: rgba(255, 255, 255, .4);
+     font-size: 13px;
+     margin: 0;
+ }
+
+ .crm-form-title {
+     font-family: 'Syne', sans-serif;
+     font-size: 20px;
+     font-weight: 700;
+     color: #fff;
+     margin-bottom: 20px;
+ }
+
+ /* ── Inputs ── */
+ .crm-input {
+     background: rgba(255, 255, 255, .07) !important;
+     border: 1px solid rgba(255, 255, 255, .12) !important;
+     border-radius: 10px !important;
+     color: #fff !important;
+     font-size: 14px !important;
+     padding: 11px 14px !important;
+     font-family: 'DM Sans', sans-serif;
+     transition: border-color .2s, box-shadow .2s;
+ }
+
+ .crm-input::placeholder {
+     color: rgba(255, 255, 255, .32) !important;
+ }
+
+ .crm-input:focus {
+     background: rgba(255, 255, 255, .09) !important;
+     border-color: rgba(124, 58, 237, .7) !important;
+     box-shadow: 0 0 0 3px rgba(124, 58, 237, .22) !important;
+     color: #fff !important;
+ }
+
+ .crm-eye-btn {
+     background: rgba(255, 255, 255, .07) !important;
+     border: 1px solid rgba(255, 255, 255, .12) !important;
+     border-left: none !important;
+     border-radius: 0 10px 10px 0 !important;
+     color: rgba(255, 255, 255, .38) !important;
+     padding: 0 12px !important;
+     line-height: 1;
+     box-shadow: none !important;
+     transition: color .2s, background .2s;
+ }
+
+ .crm-eye-btn:hover {
+     color: rgba(255, 255, 255, .8) !important;
+     background: rgba(255, 255, 255, .11) !important;
+ }
+
+ .crm-eye-btn:focus {
+     box-shadow: none !important;
+     outline: none;
+ }
+
+ .crm-eye-btn:active {
+     background: rgba(255, 255, 255, .14) !important;
+ }
+
+ .input-group .crm-input:not(:last-child) {
+     border-right: none !important;
+     border-radius: 10px 0 0 10px !important;
+ }
+
+ /* Strength bar */
+ .strength-track {
+     height: 6px;
+     border-radius: 3px;
+     background: rgba(255, 255, 255, .1);
+     overflow: hidden;
+     margin-bottom: 4px;
+ }
+
+ .strength-fill {
+     height: 100%;
+     border-radius: 3px;
+     transition: width .4s ease, background .4s ease;
+ }
+
+ .strength-labels span {
+     color: rgba(255, 255, 255, .3);
+     font-size: 11px;
+ }
+
+ /* ── Divider ── */
+ .crm-divider {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     color: rgba(255, 255, 255, .25);
+     font-size: 12px;
+     font-weight: 500;
+     letter-spacing: .5px;
+     text-transform: uppercase;
+ }
+
+ .crm-divider::before,
+ .crm-divider::after {
+     content: '';
+     flex: 1;
+     height: 1px;
+     background: rgba(255, 255, 255, .1);
+ }
+
+ /* ── CTA button ── */
+ .crm-cta {
+     width: 100% !important;
+     background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+     border: none !important;
+     border-radius: 10px !important;
+     padding: 12px !important;
+     font-size: 15px !important;
+     font-weight: 700 !important;
+     letter-spacing: .3px;
+     box-shadow: 0 4px 22px rgba(124, 58, 237, .45) !important;
+     transition: opacity .2s, transform .15s, box-shadow .2s !important;
+     font-family: 'DM Sans', sans-serif;
+     color: #fff !important;
+ }
+
+ .crm-cta:hover {
+     opacity: .92;
+     transform: translateY(-1px);
+     box-shadow: 0 6px 28px rgba(124, 58, 237, .58) !important;
+ }
+
+ .crm-cta:active {
+     transform: translateY(0);
+ }
+
+ .crm-cta:focus {
+     box-shadow: 0 0 0 3px rgba(124, 58, 237, .42) !important;
+ }
+
+ /* ── Google button ── */
+ .crm-google {
+     width: 100% !important;
+     background: #fff !important;
+     border: 1px solid rgba(255, 255, 255, .15) !important;
+     border-radius: 10px !important;
+     color: #1f1f1f !important;
+     font-size: 14px !important;
+     font-weight: 600 !important;
+     padding: 11px 14px !important;
+     display: flex !important;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     transition: background .2s, box-shadow .2s !important;
+     font-family: 'DM Sans', sans-serif;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, .25) !important;
+ }
+
+ .crm-google:hover {
+     background: #f5f5f5 !important;
+     box-shadow: 0 4px 14px rgba(0, 0, 0, .3) !important;
+ }
+
+ .crm-google:focus {
+     box-shadow: 0 0 0 3px rgba(66, 133, 244, .35) !important;
+ }
+
+ /* Checkboxes */
+ .crm-check .form-check-input {
+     background-color: rgba(255, 255, 255, .08) !important;
+     border-color: rgba(255, 255, 255, .2) !important;
+     cursor: pointer;
+ }
+
+ .crm-check .form-check-input:checked {
+     background-color: #7c3aed !important;
+     border-color: #7c3aed !important;
+ }
+
+ .crm-check .form-check-input:focus {
+     box-shadow: 0 0 0 3px rgba(124, 58, 237, .3) !important;
+ }
+
+ .crm-check .form-check-label {
+     color: rgba(255, 255, 255, .68);
+     font-size: 13px;
+     cursor: pointer;
+ }
+
+ .crm-link {
+     background: none;
+     border: none;
+     color: #818cf8;
+     font-size: 13px;
+     font-weight: 700;
+     cursor: pointer;
+     padding: 0;
+     font-family: 'DM Sans', sans-serif;
+     text-decoration: none;
+     transition: color .2s;
+ }
+
+ .crm-link:hover {
+     color: #a5b4fc;
+     text-decoration: underline;
+ }
+
+ .crm-muted {
+     color: rgba(255, 255, 255, .38);
+     font-size: 13px;
+ }
