@@ -8,11 +8,11 @@ import checkSubscription from '../../Utils/CheckSubscription'
 
 const REQUIRED_HEADERS = ['Name', 'Email', 'Designation', 'Phone', 'ProfileURL', 'Company', 'Source']
 
-const AVATAR_COLORS = ["#3b82f6", "#8b5cf6", "#ec4899", "#14b8a6", "#f59e0b", "#6366f1", "#10b981"]
+// const AVATAR_COLORS = ["#3b82f6", "#8b5cf6", "#ec4899", "#14b8a6", "#f59e0b", "#6366f1", "#10b981"]
 
-function getInitials(name = "") {
-    return name.split(" ").filter(Boolean).map((n) => n[0]).join("").slice(0, 2).toUpperCase()
-}
+// function getInitials(name = "") {
+//     return name.split(" ").filter(Boolean).map((n) => n[0]).join("").slice(0, 2).toUpperCase()
+// }
 
 const Imports = () => {
     const [collapsed, setCollapsed] = useState(false)
@@ -97,16 +97,16 @@ const Imports = () => {
 
     const handleUpload = () => {
         setUploading(true)
-        const json = tableData.map((row) => ({
-            name: row["name"] || row["Name"] || "",
-            email: row["email"] || row["Email"] || "",
-            designation: row["designation"] || row["Designation"] || "",
-            phone: row["phone"] || row["Phone"] || "",
-            profileURL: row["profileURL"] || row["ProfileURL"] || "",
-            company: row["company"] || row["Company"] || "",
-            source: row["source"] || row["Source"] || "",
-            status: "New",
-        }))
+        // const json = tableData.map((row) => ({
+        //     name: row["name"] || row["Name"] || "",
+        //     email: row["email"] || row["Email"] || "",
+        //     designation: row["designation"] || row["Designation"] || "",
+        //     phone: row["phone"] || row["Phone"] || "",
+        //     profileURL: row["profileURL"] || row["ProfileURL"] || "",
+        //     company: row["company"] || row["Company"] || "",
+        //     source: row["source"] || row["Source"] || "",
+        //     status: "New",
+        // }))
         setUploaded(true)
         // axios({
         //     url: `${baseURL}/api/v1/contact/importExcel`,
